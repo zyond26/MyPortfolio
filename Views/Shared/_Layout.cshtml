@@ -1,0 +1,141 @@
+﻿@* <!DOCTYPE html> *@
+@* <html lang="en"> *@
+@* <head> *@
+@*     <meta charset="utf-8" /> *@
+@*     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> *@
+@*     <title>@ViewData["Title"] - MyWebSite</title> *@
+@*     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+@*     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> *@
+@*     <link rel="stylesheet" href="~/MyWebSite.styles.css" asp-append-version="true" /> *@
+@* </head> *@
+@* <body> *@
+@*     <header> *@
+@*         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"> *@
+@*             <div class="container-fluid"> *@
+@*                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MyWebSite</a> *@
+@*                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" *@
+@*                         aria-expanded="false" aria-label="Toggle navigation"> *@
+@*                     <span class="navbar-toggler-icon"></span> *@
+@*                 </button> *@
+@*                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between"> *@
+@*                     <ul class="navbar-nav flex-grow-1"> *@
+@*                         <li class="nav-item"> *@
+@*                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a> *@
+@*                         </li> *@
+@*                         <li class="nav-item"> *@
+@*                             <a class="nav-link text-dark" asp-area="" asp-controller="Page404" asp-action="index">index</a> *@
+@*                         </li> *@
+@*                     </ul> *@
+@*                 </div> *@
+@*             </div> *@
+@*         </nav> *@
+@*     </header> *@
+@*     <div class="container"> *@
+@*         <main role="main" class="pb-3"> *@
+@*             @RenderBody() *@
+@*         </main> *@
+@*     </div> *@
+
+@*     <script src="~/lib/jquery/dist/jquery.min.js"></script> *@
+@*     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
+@*     <script src="~/js/site.js" asp-append-version="true"></script> *@
+@*     @await RenderSectionAsync("Scripts", required: false) *@
+@* </body> *@
+@* </html> *@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Pentest Lab</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #00ffea;
+            font-family: 'Courier New', monospace;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #001f3f, #012b45);
+            border-bottom: 2px solid #00ffea;
+            box-shadow: 0px 4px 15px rgba(0, 255, 234, 0.2);
+        }
+
+        .navbar-brand {
+            color: #00ffea;
+            font-weight: bold;
+            text-shadow: 0px 0px 8px #00ffea;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            transition: 0.3s;
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #00ffea;
+                text-shadow: 0px 0px 6px #00ffea;
+            }
+
+        .console {
+            background: rgba(0, 255, 234, 0.1);
+            border: 1px solid #00ffea;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 255, 234, 0.2);
+            font-size: 14px;
+            color: #00ffea;
+            font-family: 'Courier New', monospace;
+        }
+
+        footer {
+            background: #012b45;
+            color: #00ffea;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">⚡ Pentest Lab</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="@Url.Action("Index", "Home")">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Projects", "Home")">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Skills", "Home")">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Info", "Home")">About Me</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <div class="container mt-4">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+</body>
+</html>
